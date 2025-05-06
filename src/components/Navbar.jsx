@@ -23,7 +23,7 @@ const Navbar = () => {
     useContext(GlobalContext);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const isMobile = useMediaQuery("(max-width:600px)");
-  const [active,setActive]=useState(1)
+  const [active, setActive] = useState(1)
 
   const toggleTheme = () => {
     setThemeMode(themeMode === "light" ? "dark" : "light");
@@ -31,32 +31,32 @@ const Navbar = () => {
 
   const navLinks = (
     <Box sx={{ display: "flex", gap: 5, alignItems: "center" }}>
-      <Link to="/" onClick={()=>setActive(1)} style={{ textDecoration: "none",padding:'5px 15px',borderRadius:4, color: "inherit" ,fontSize:14.5,backgroundColor:active==1&&"rgba(255, 255, 255, 0.2)"}}>
+      <Link to="/" onClick={() => setActive(1)} style={{ textDecoration: "none", padding: '5px 15px', borderRadius: 4, color: "inherit", fontSize: 14.5, backgroundColor: active == 1 && "rgba(255, 255, 255, 0.1)" }}>
         HOME
       </Link>
-  
+
       <Link
-       onClick={()=>setActive(2)} 
+        onClick={() => setActive(2)}
         to="/exchange-rates"
-        style={{ textDecoration: "none",padding:'5px 15px',borderRadius:4, color: "inherit" ,fontSize:14.5,backgroundColor:active==2&&"rgba(255, 255, 255, 0.2)"}}
+        style={{ textDecoration: "none", padding: '5px 15px', borderRadius: 4, color: "inherit", fontSize: 14.5, backgroundColor: active == 2 && "rgba(255, 255, 255, 0.1)" }}
       >
         EXCHANGE RATES(LIVE)
       </Link>
       <Link
-       onClick={()=>setActive(3)} 
-      to="/about" style={{ textDecoration: "none",padding:'5px 15px',borderRadius:4, color: "inherit" ,fontSize:14.5,backgroundColor:active==3&&"rgba(255, 255, 255, 0.2)"}}>
+        onClick={() => setActive(3)}
+        to="/about" style={{ textDecoration: "none", padding: '5px 15px', borderRadius: 4, color: "inherit", fontSize: 14.5, backgroundColor: active == 3 && "rgba(255, 255, 255, 0.1)" }}>
         ABOUT
       </Link>
       <Link
-       onClick={()=>setActive(4)} 
+        onClick={() => setActive(4)}
         to="/error-page"
-        style={{ textDecoration: "none",padding:'5px 15px',borderRadius:4, color: "inherit" ,fontSize:14.5,backgroundColor:active==4&&"rgba(255, 255, 255, 0.2)"}}
+        style={{ textDecoration: "none", padding: '5px 15px', borderRadius: 4, color: "inherit", fontSize: 14.5, backgroundColor: active == 4 && "rgba(255, 255, 255, 0.1)" }}
       >
         ERROR PAGE
       </Link>
-    
-       <Switch checked={themeMode === "dark"} onChange={toggleTheme} />
-  
+
+      <Switch checked={themeMode === "dark"} onChange={toggleTheme} />
+
 
     </Box>
   );
@@ -77,7 +77,7 @@ const Navbar = () => {
             <>
               {navLinks}
 
-             
+
             </>
           )}
         </Toolbar>
@@ -99,7 +99,7 @@ const Navbar = () => {
             <ListItem button component={Link} to="/about" style={{ textDecoration: "none", color: "inherit" }}>
               <ListItemText primary="About" />
             </ListItem>
-          
+
 
             <ListItem>
               <Typography variant="body2">Dark Mode</Typography>
