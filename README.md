@@ -24,5 +24,4 @@ A modern, responsive single-page web application that helps users calculate thei
 
 ---
 
-## 📁 Project Structure
 
